@@ -42,6 +42,7 @@ public class Team {
 		getAwardScore();
 		getRankPickScore();
 		getTotalScore();
+		TableScraper.scrapeHighScore(number, event);
 		
 	}
 
@@ -172,7 +173,7 @@ public class Team {
 	}
 	
 	void getRankPickScore() throws IOException {
-		ArrayList<ArrayList<Integer>> table = TableScraper.grabTable(event);
+		ArrayList<ArrayList<Integer>> table = TableScraper.scrapePicks(event);
 		captains = table.get(0);
 		picks = table.get(1);
 		for(int t:captains) {

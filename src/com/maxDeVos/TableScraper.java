@@ -12,7 +12,7 @@ import com.cpjd.models.standard.Event;
 
 public class TableScraper {
 
-	public static ArrayList<ArrayList<Integer>> grabTable(Event e) throws IOException {
+	public static ArrayList<ArrayList<Integer>> scrapePicks(Event e) throws IOException {
 		int i = 0;
 		ArrayList<Integer> captains = new ArrayList<Integer>();
 		ArrayList<Integer> picks = new ArrayList<Integer>();
@@ -55,6 +55,32 @@ public class TableScraper {
 		returnArray.add(picks);
 		
 		return returnArray;
+
+	}
+	
+	static void scrapeHighScoreFromTable(int team, Event e) {
+		
+	}
+	
+	public static int scrapeHighScore(int team, Event e) throws IOException {
+		
+		int highScore;
+		Document doc = Jsoup.connect("https://www.thebluealliance.com/event/" + e.getKey() + "#event-insights").get();
+		Element table = doc.getElementsByClass("table table-condensed table-striped text-right").get(4);
+		Elements columns = table.select("tr");
+		String[] x = columns.get(0).select("td").text().split(" ");
+		highScore = Integer.parseInt(x[2]);
+		
+		
+		
+		System.out.println(highScore);
+		
+		Elements a = table.select("a");
+		for(Element l: a) {
+			System.out.println(l.attr("href"));
+		}
+		
+		return 0;
 
 	}
 }

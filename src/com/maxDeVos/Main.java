@@ -14,7 +14,7 @@ public class Main {
 		TBA.setAuthToken("uJvxP1GDDT7O6Y0Ys7xrGhVUdntYErICAtz9uDc74LcpxPFz3vqcpMrHG94MuMPC");
 		TBA tba = new TBA();
 		Team team1 = new Team(1311, tba);
-		System.out.println(team1.totalScore);
+		//System.out.println(team1.totalScore);
 		
 	}
 }
