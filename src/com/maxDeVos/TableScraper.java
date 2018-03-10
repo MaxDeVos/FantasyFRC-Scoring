@@ -58,27 +58,29 @@ public class TableScraper {
 
 	}
 	
-	static void scrapeHighScoreFromTable(int team, Event e) {
+	static ArrayList<String> scrapeHighScoreFromTable(int tableId, Event e) throws IOException {
+		
+		Document doc = Jsoup.connect("https://www.thebluealliance.com/event/" + e.getKey() + "#event-insights").get();
+		Element table = doc.getElementsByClass("table table-condensed table-striped text-right").get(tableId);
+		Elements columns = table.select("tr");
+		String[] x = columns.get(0).select("td").text().split(" ");
+		ArrayList<String> returnArray = new ArrayList<String>();
+		returnArray.add(x[2]);
+		
+		Elements a = table.select("a");
+		for(Element l: a) {
+			returnArray.add(l.attr("href"));
+		}
+		
+		return returnArray;
+		
 		
 	}
 	
 	public static int scrapeHighScore(int team, Event e) throws IOException {
-		
-		int highScore;
-		Document doc = Jsoup.connect("https://www.thebluealliance.com/event/" + e.getKey() + "#event-insights").get();
-		Element table = doc.getElementsByClass("table table-condensed table-striped text-right").get(4);
-		Elements columns = table.select("tr");
-		String[] x = columns.get(0).select("td").text().split(" ");
-		highScore = Integer.parseInt(x[2]);
-		
-		
-		
-		System.out.println(highScore);
-		
-		Elements a = table.select("a");
-		for(Element l: a) {
-			System.out.println(l.attr("href"));
-		}
+
+		System.out.println(scrapeHighScoreFromTable(4, e));
+		System.out.println(scrapeHighScoreFromTable(2, e));
 		
 		return 0;
 
