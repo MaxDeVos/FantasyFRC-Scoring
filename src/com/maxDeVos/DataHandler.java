@@ -26,36 +26,36 @@ public class DataHandler {
 	}
 	
 	public static int awardToPoints(Award a) {
-
+		
 		if(a.getName().contains("Chairman's Award Finalist")) {
 			return 50;
 		}
-		if(a.getName().contains("Chairman")) {
+		else if(a.getName().contains("Chairman")) {
 			return 42;
 		}
-		if(a.getName().contains("Regional Winner")) {
-			return 10;
-		}
-		if(a.getName().contains("Regional Finalist")) {
-			return 0;
-		}
-		if(a.getName().contains("Rookie All Star")) {
+		else if(a.getName().contains("Rookie All Star")) {
 			return 20;
 		}
-		if(a.getName().contains("Rookie Inspiration")) {
+		else if(a.getName().contains("Rookie Inspiration")) {
 			return 15;
 		}
-		if(a.getName().contains("Quality") || a.getName().contains("Control") || a.getName().contains("Excellence") || a.getName().contains("Creativity") ) {
+		else if(a.getName().contains("Quality") || a.getName().contains("Control") || a.getName().contains("Excellence") || a.getName().contains("Creativity") ) {
 			return 15;
 		}
-		if(a.getName().contains("Dean's")) {
+		else if(a.getName().contains("Dean")) {
 			return 4;
 		}
-		if(a.getName().contains("Woodie")) {
+		else if(a.getName().contains("Woodie")) {
 			return 8;
 		}
-		if(a.getName().contains("Regional Engineering Inspiration")) {
+		else if(a.getName().contains("Engineering Inspiration")) {
 			return 36;
+		}
+		else if(a.getName().contains("Winner")) {
+			return 10;
+		}
+		else if(a.getName().contains("Finalist")) {
+			return 0;
 		}
 		return 2;
 	}
