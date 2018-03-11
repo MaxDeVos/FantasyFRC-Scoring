@@ -1,5 +1,6 @@
 package com.maxDeVos;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.cpjd.main.TBA;
@@ -23,8 +24,30 @@ public class Person {
 		
 	}
 	
-	public void getTeamScore(int team) {
-		teams.get(team + 1);
+	public int getTeamScore(int team) throws IOException {
+		Team t = new Team(teams.get(team - 1), tba);
+		return t.totalScore;
+	}
+	
+	public void printDataSheets() throws IOException {
+		for(Integer a:teams) {
+			Team t = new Team(a, tba);
+			System.out.println("");
+			System.out.println("Team Datasheet - " + t.number);
+			t.printDataSheet();
+		}
+		
+		System.out.println("");
+		System.out.println("Total Score: " + getTotalScore());
+	}
+	
+	public int getTotalScore() throws IOException {
+		int score = 0;
+		for(Integer a:teams) {
+			Team t = new Team(a, tba);
+			score += t.totalScore;
+		}
+		return score;
 	}
 	
 	
