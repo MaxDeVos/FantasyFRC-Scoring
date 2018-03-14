@@ -47,8 +47,6 @@ public class Team {
 			getTotalScore();
 		}
 		catch(Exception e) {
-			System.out.println(number + " Does Not Compete Week " + Main.currentWeek);
-			System.out.println(e.getMessage());
 		}
 	}
 

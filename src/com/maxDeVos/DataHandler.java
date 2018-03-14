@@ -39,7 +39,7 @@ public class DataHandler {
 		else if(a.getName().contains("Rookie Inspiration")) {
 			return 15;
 		}
-		else if(a.getName().contains("Quality") || a.getName().contains("Control") || a.getName().contains("Excellence") || a.getName().contains("Creativity") ) {
+		else if(a.getName().contains("Quality") || a.getName().contains("Control") || a.getName().contains("Excellence") || a.getName().contains("Creativity") || a.getName().contains("Industrial")) {
 			return 15;
 		}
 		else if(a.getName().contains("Dean")) {

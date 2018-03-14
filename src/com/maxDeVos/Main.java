@@ -15,7 +15,7 @@ public class Main {
 		tba = new TBA();
 
 		Person max = new Person(tba);
-		max.setTeams(1477, 340, 1311, 3478, 2590);
+		max.setTeams(148,359,2834,610,2363);
 		max.printDataSheets();
 
 	}

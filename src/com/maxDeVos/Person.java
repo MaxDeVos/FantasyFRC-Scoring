@@ -30,15 +30,15 @@ public class Person {
 	}
 	
 	public void printDataSheets() throws IOException {
+		System.out.println("Total Score: " + getTotalScore());
+		System.out.println("");
 		for(Integer a:teams) {
 			Team t = new Team(a, tba);
 			System.out.println("");
-			System.out.println("Team Datasheet - " + t.number);
+			System.out.println("Team: " + t.number);
 			t.printDataSheet();
 		}
-		
-		System.out.println("");
-		System.out.println("Total Score: " + getTotalScore());
+	
 	}
 	
 	public int getTotalScore() throws IOException {
