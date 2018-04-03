@@ -1,4 +1,4 @@
-package com.maxDeVos;
+package com.maxDeVos.util;
 
 import com.cpjd.models.other.Award;
 import com.cpjd.models.standard.Match;

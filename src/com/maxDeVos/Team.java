@@ -7,6 +7,8 @@ import com.cpjd.main.TBA;
 import com.cpjd.models.other.Award;
 import com.cpjd.models.standard.Event;
 import com.cpjd.models.standard.Match;
+import com.maxDeVos.util.DataHandler;
+import com.maxDeVos.util.TableScraper;
 
 public class Team {
 
@@ -32,11 +34,11 @@ public class Team {
 	ArrayList<Integer> picks = new ArrayList<Integer>();
 	int rankPickScore = 0;
 
-	public Team(int number_, TBA tba_) throws IOException {
+	public Team(int number_) throws IOException {
 
 		try {
 			number = number_;
-			tba = tba_;
+			tba = Main.tba;
 			getWeekEvent();
 			getAllMatchScore();
 			getQualMatchScore();
@@ -64,6 +66,7 @@ public class Team {
 			if (e.getWeek() == Main.currentWeek - 1) {
 				if(!e.getName().contains("Week 0")) {
 					event = e;
+					System.out.println(e.getName());
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-package com.maxDeVos;
+package com.maxDeVos.util;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,6 +10,7 @@ import org.jsoup.select.Elements;
 
 import com.cpjd.models.standard.Event;
 import com.cpjd.models.standard.Match;
+import com.maxDeVos.Main;
 
 public class TableScraper {
 
